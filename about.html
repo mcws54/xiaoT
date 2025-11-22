@@ -1,0 +1,342 @@
+<html lang="zh-CN">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>关于 - DeepSeek</title> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> 
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #333333;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark-theme {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .header {
+            height: 60px;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .dark-theme .header {
+            background: #2d2d2d;
+            border-bottom-color: #404040;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .dark-theme .back-btn {
+            color: #888;
+        }
+
+        .back-btn:hover {
+            background: #f5f5f5;
+            color: #007bff;
+        }
+
+        .dark-theme .back-btn:hover {
+            background: #404040;
+            color: #4a90e2;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .dark-theme .app-title {
+            color: white;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 80px;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .dark-theme .logo {
+            color: #4a90e2;
+        }
+
+        .app-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .dark-theme .app-name {
+            color: white;
+        }
+
+        .app-version {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .dark-theme .app-version {
+            color: #888;
+        }
+
+        .info-section {
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .dark-theme .section-title {
+            color: white;
+            border-bottom-color: #4a90e2;
+        }
+
+        .info-content {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .dark-theme .info-content {
+            color: #888;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list i {
+            color: #007bff;
+            width: 20px;
+        }
+
+        .dark-theme .feature-list i {
+            color: #4a90e2;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .tech-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .dark-theme .tech-item {
+            background: #2d2d2d;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .tech-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #007bff;
+        }
+
+        .dark-theme .tech-icon {
+            color: #4a90e2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: auto;
+        }
+
+        .dark-theme .footer {
+            color: #888;
+            border-top-color: #404040;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 60px;
+            }
+            
+            .app-name {
+                font-size: 28px;
+            }
+            
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style> 
+  <script src="js/jq.js"></script> 
+ </head> 
+ <body id="v1"> 
+  <div id="v2" class="header"> 
+   <button id="v3" class="back-btn" onclick="goBack()"> <i id="v4" class="fas fa-arrow-left"></i> <span id="v5">返回</span> </button> 
+   <div id="v6" class="app-title">
+     关于 小T
+   </div> 
+   <div id="v7" style="width: 80px;"></div> 
+   <!-- 占位用于居中标题 --> 
+  </div> 
+  <div id="v8" class="container"> 
+   <div id="v11" class="app-name">
+     小T 
+   </div> 
+   <div id="v12" class="app-version">
+     版本 2.0.0 
+   </div> 
+   <div id="v13" class="info-section"> 
+    <div id="v14" class="section-title">
+      应用介绍 
+    </div> 
+    <div id="v15" class="info-content">
+      小T 是一个基于 DeepSeek AI 模型的智能对话助手，提供流畅的聊天体验和强大的文本生成能力。本应用含Windows端、Android端，现在正在开发iOS端，敬请期待。
+    </div> 
+   </div> 
+   <div id="v16" class="info-section"> 
+    <div id="v17" class="section-title">
+      主要功能 
+    </div> 
+    <ul id="v18" class="feature-list"> 
+     <li id="v19"><i id="v20" class="fas fa-comments"></i> 智能对话交流</li> 
+     <li id="v21"><i id="v22" class="fas fa-sync-alt"></i> 连续对话上下文</li> 
+     <li id="v25"><i id="v26" class="fas fa-palette"></i> 深浅色主题切换</li> 
+     <li id="v29"><i id="v30" class="fas fa-mobile-alt"></i> 响应式设计</li> 
+    </ul> 
+   </div> 
+   <div id="v31" class="info-section"> 
+    <div id="v32" class="section-title">
+      技术栈 
+    </div> 
+    <div id="v33" class="tech-stack"> 
+     <div id="v34" class="tech-item"> 
+      <div id="v35" class="tech-icon"> 
+       <i id="v36" class="fab fa-html5"></i> 
+      </div> 
+      <div id="v37">
+        HTML5 
+      </div> 
+     </div> 
+     <div id="v38" class="tech-item"> 
+      <div id="v39" class="tech-icon"> 
+       <i id="v40" class="fab fa-css3-alt"></i> 
+      </div> 
+      <div id="v41">
+        CSS3 
+      </div> 
+     </div> 
+     <div id="v42" class="tech-item"> 
+      <div id="v43" class="tech-icon"> 
+       <i id="v44" class="fab fa-js"></i> 
+      </div> 
+      <div id="v45">
+        JavaScript 
+      </div> 
+     </div> 
+     <div id="v46" class="tech-item"> 
+      <div id="v47" class="tech-icon"> 
+       <i id="v48" class="fas fa-code"></i> 
+      </div> 
+      <div id="v49">
+        DeepSeek API 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="v50" class="info-section"> 
+    <div id="v51" class="section-title">
+      开发信息 
+    </div> 
+    <div id="v52" class="info-content"> 
+     <p id="v53">开发: TW团队</p> 
+     <p id="v54">构建工具: html</p> 
+     <p id="v55">最后更新: 2025年11月22日</p> 
+     <p id="v56">TW官网:tywz.mysxl.cn</p>
+    </div> 
+   </div> 
+  </div> 
+  <div id="v56" class="footer"> 
+   <p id="v57">© 2025 TW.studio 保留所有权利</p> 
+  </div> 
+  <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        // 检测系统主题偏好
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            document.body.classList.add('dark-theme');
+        }
+    </script> } }  
+ </body>
+</html>
